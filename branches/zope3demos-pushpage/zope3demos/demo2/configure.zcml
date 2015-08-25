@@ -1,0 +1,47 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+
+	<browser:page
+	   for="*"
+	   name="vdemo2.html"
+	   template="page.pt"
+	   permission="zope.View"
+	   class=".MasterpageView"
+	   />
+
+	<browser:viewletManager
+		name="demo2vmprovider"
+		permission="zope.Public"
+		provides=".demo.IDemoViewletManager"
+		template="viewletmanager.pt"
+		/>
+
+	<browser:viewlet
+		name="demo2viewlet"
+		for="*"
+		manager=".demo.IDemoViewletManager"
+		class=".demo.Viewlet"
+		permission="zope.Public"
+		/>
+
+	<browser:viewlet
+		name="demo2viewlet2"
+		for="*"
+		manager=".demo.IDemoViewletManager"
+		template="viewlet2.pt"
+		permission="zope.Public"
+		zcmlnamespacetest="zcml namespace test"
+		/>
+
+	<browser:viewlet
+		name="demo2viewlet3"
+		for="*"
+		manager=".demo.IDemoViewletManager"
+		template="viewlet3.pt"
+		permission="zope.Public"
+        class=".demo.Viewlet3"
+		/>
+
+</configure>

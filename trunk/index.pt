@@ -1,0 +1,62 @@
+<html><head></head><body>
+
+<h2> Viewlet/Contentprovider Examples </h2>
+
+	<ul>
+		<li><a href="/@@z3d.demo1.index.html">Viewlet 1</a></li>
+		<li><a href="/@@z3d.demo2.index.html">Viewlet 2</a></li>
+	</ul>
+
+	<ul>
+		<p>Add content to root folder for next two demos.</p>
+		<li><a href="/@@z3d.demo3.index.html">Viewlet 3</a> </li>
+		<li><a href="/@@z3d.demo4.index.html">Viewlet 4</a> </li>
+		<li><a href="/@@cpdemo1.html">Contentprovider 1</a> </li>
+	</ul>
+
+<h2>Masterpage Examples</h2>
+<p>An exploration of alternatives to macros using viewlets and content providers</p>
+
+	<ul>
+		<li><a href="/@@z3d.mpdemo1.index.html">Masterpages without macros 1</a> </li>
+		<li><a href="/@@z3d.mpdemo2.index.html">Juergen Masterpages without macros 2</a> </li>
+		<li>Jurgen Masterpages stripped down
+			<ul>
+				<li><a href="/@@z3d.mpdemo3.page1.html">@@z3d.mpdemo3.page1.html</a></li>
+				<li><a href="/@@z3d.mpdemo3.page2.html">@@z3d.mpdemo3.page2.html</a></li>
+			</ul>
+		</li>
+		<li><a href="@@z3d.mpdemo4.index.html">Masterpages demo4</a> based on <a href="http://blogs.lovelysystems.com/srichter/2006/09/20/the-skin-browser-and-lovely-systems-new-development-workflow/">this blog posting</a> by Stephan Richter</li> see also viewtemplate example.
+	</ul>
+
+
+<h2>Viewtemplate Example</h2>
+<p>z3c.viewtemplate seperates the zpt template from the view class.</p>
+
+<ul>
+	<li><a href="/++skin++MySkin/@@viewtemplate1.html">++skin++MySkin/@@viewtemplate1.html</a></li>
+	<li><a href="/++skin++MySkin2/@@viewtemplate1.html">++skin++MySkin2/@@viewtemplate1.html</a></li>
+</ul>
+
+<h2>Formlib Demo</h2>
+<ul>
+	<li><a href="/@@z3d.formlib1.page1.html">/@@z3d.formlib1.page1.html</a></li>
+	<li><a href="/@@z3d.formlib1.page1-length.html">/@@z3d.formlib1.page1-length.html</a></li>
+    <li><a href="/@@z3d.formlib1.page1-name.html">/@@z3d.formlib1.page1-name.html</a></li>
+	<li><a href="/@@z3d.formlib1.page2.html">/@@z3d.formlib1.page2.html</a></li>
+    <li><a href="/@@z3d.formlib1.page3.html">/@@z3d.formlib1.page3.html</a></li>
+    <li>Formlib2 Demo
+    	<ul>
+    		<li><a href="/@@contents.html?type_name=BrowserAdd__zope3demos.formlib2.demo.Order">Create Formlib2 Demo Object</a></li>
+    		<li>Visit the new object</li>
+    		<li>Edit the new object</li>
+    	</ul>
+    </li>
+</ul>
+
+
+
+
+
+
+</body></html>

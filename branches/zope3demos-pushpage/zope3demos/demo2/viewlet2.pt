@@ -1,0 +1,1 @@
+<b>viewlet2.pt success!</b> <i tal:content="view/zcmlnamespacetest|nothing" />

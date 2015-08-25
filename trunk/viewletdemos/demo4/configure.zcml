@@ -1,0 +1,39 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+
+	<browser:page
+	   for="*"
+	   name="z3d.demo4.index.html"
+	   permission="zope.View"
+	   class=".MasterpageView"
+	   />
+
+	<browser:viewletManager
+		name="z3d.demo4.viewletmanager"
+		permission="zope.Public"
+		provides=".demo.IDemoViewletManager"
+		template="demoviewletmanager.pt"
+        class=".demo.DemoViewletManager"
+	    />
+
+	<browser:viewlet
+		name="z3d.demo4.viewlet1"
+		for="*"
+		manager=".demo.IDemoViewletManager"
+		class=".demo.NameViewlet"
+		permission="zope.Public"
+		column_title="Name"
+		/>
+
+	<browser:viewlet
+		name="z3d.demo4.viewlet2"
+		for="*"
+		manager=".demo.IDemoViewletManager"
+		class=".demo.SizeViewlet"
+		permission="zope.Public"
+		column_title="Size"
+		/>
+
+</configure>

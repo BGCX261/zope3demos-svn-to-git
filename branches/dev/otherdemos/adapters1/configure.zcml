@@ -1,0 +1,78 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  >
+	<class class=".demo.MyAdaptableContent">
+		<require
+		  permission="zope.Public"
+		  interface=".demo.IMyAdaptableContent"
+		  />
+		<require
+		  permission="zope.ManageContent"
+		  set_schema=".demo.IMyAdaptableContent"
+		  />
+	</class>
+
+ 		<browser:addMenuItem
+ 		  class=".demo.MyAdaptableContent"
+ 		  title="My Adaptable Content"
+ 		  permission="zope.ManageContent"
+ 		  />
+
+	<adapter factory=".demo.Description"
+		provides=".demo.IDescription"
+		for=".demo.MyAdaptableContent"
+		trusted="True"
+		 />
+
+	<browser:page
+	    for=".demo.IMyAdaptableContent"
+		name="index.html"
+		permission="zope.Public"
+		menu="zmi_views" title="View"
+		class=".demo.MyView"
+		/>
+
+	<!-- can we use the same adapter twice?? yes! -->
+	<class class=".demo.MyAdaptableContent2">
+		<require
+		  permission="zope.Public"
+		  interface=".demo.IMyAdaptableContent"
+		  />
+		<require
+		  permission="zope.ManageContent"
+		  set_schema=".demo.IMyAdaptableContent"
+		  />
+	</class>
+
+	<class class=".demo.Description">
+		<require
+		  permission="zope.Public"
+		  interface=".demo.IDescription"
+		  />
+		<require
+		  permission="zope.ManageContent"
+		  set_schema=".demo.IDescription"
+		  />
+	</class>
+
+ 		<browser:addMenuItem
+ 		  class=".demo.MyAdaptableContent2"
+ 		  title="My Adaptable Content2"
+ 		  permission="zope.ManageContent"
+ 		  />
+
+	<adapter factory=".demo.Description"
+		provides=".demo.IDescription"
+		for=".demo.MyAdaptableContent2"
+		trusted="True"
+		/>
+
+	<browser:page
+	    for=".demo.IMyAdaptableContent"
+		name="index2.html"
+		permission="zope.Public"
+		menu="zmi_views" title="View2"
+		class=".demo.MyView"
+		/>
+  </configure>

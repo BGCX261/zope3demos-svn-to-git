@@ -1,0 +1,1 @@
+<li>this is z3d.mpdemo4.viewlet.pt - the following is the result of ViewletManager -> Viewlet --> context.__name__ <span tal:replace="view/content" /></li>

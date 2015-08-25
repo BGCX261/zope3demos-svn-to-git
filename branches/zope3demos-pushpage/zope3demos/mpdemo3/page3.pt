@@ -1,0 +1,3 @@
+<html><body>
+<b>page 3 <span tal:replace="structure provider/dvm4" /></b>
+</body></html>

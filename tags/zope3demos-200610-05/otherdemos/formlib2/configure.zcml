@@ -1,0 +1,42 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  >
+
+		<content class=".demo.Order">
+		  <require
+		  	permission="zope.Public"
+		  	interface=".demo.IOrder"
+		  	/>
+		  <require
+		    permission="zope.ManageContent"
+		    set_schema=".demo.IOrder"
+		    />
+		 </content>
+
+	  	<browser:page
+	  	  for=".demo.IOrder"
+	  	  name="index.html"
+	  	  class=".demo.OrderView"
+	  	  permission="zope.ManageContent"
+	  	  template="index.pt"
+	  	  menu="zmi_views" title="View"
+	  	  />
+
+	  	<browser:page
+	  	  for=".demo.IOrder"
+	  	  name="edit.html"
+	  	  permission="zope.ManageContent"
+	  	  class=".demo.Formlib"
+	  	  template="edit.pt"
+	  	  menu="zmi_views"
+	  	  title="Edit"
+	  	  />
+
+ 		<browser:addMenuItem
+ 		  class=".demo.Order"
+ 		  title="Formlib Demo Object"
+ 		  permission="zope.ManageContent"
+ 		  />
+
+ </configure>

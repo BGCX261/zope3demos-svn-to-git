@@ -1,0 +1,2 @@
+<h2> from filesystem page2.pt </h2>
+<li tal:repeat="content contents" tal:content="structure content/__name__" />

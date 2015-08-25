@@ -1,0 +1,9 @@
+<configure
+	xmlns="http://www.namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:zcml="http://namespaces.zope.org/zcml">
+
+
+	<include zcml:condition="installed hurry.query" package=".catalog1" />
+
+</configure>

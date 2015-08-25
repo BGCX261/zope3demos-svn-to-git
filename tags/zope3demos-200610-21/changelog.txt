@@ -1,0 +1,60 @@
+Changelog
+=========
+
+10/17/2006
+ * remove extraneous function from viewletdemos/viewtemplate1/demo.py as
+   reported by restless.being (eXt)
+
+10/11/2006
+ * added Christian Lueck's object of objects demo as posted on the mailing list
+   http://mail.zope.org/pipermail/zope3-users/2005-August/000923.html
+ * added a simplified list object of objects demo based on an email exchange with
+   Christian Lueck, uses ListSequenceWidget and CustomWidgetFactory
+ * removed absolute url on index.pt as reported by restless.being
+
+10/10/2006
+ * fix extra "." in viewletdemos/demo2/configure.zcml as reported by
+   restless.being
+
+10/05/2006
+ * major refactoring to organize packages
+ * changed url of index page from "@@vdemo.html" to "@@z3d.index.html",
+   all other page urls refactored as well to avoid namespace collisions
+ * added a drastically simplified "no macros"  masterpages demo 4 based on
+   Jürgen at Lovely Systems design detailed in Stephan Richter's blog post
+   http://tinyurl.com/jrlry (requires z3c.viewtemplate)
+ * added formlib demos
+ * added zc.catalog/hurry.query demos (requires hurry.query)
+ * now using zcml:condition to prevent breakage and allow optional dependencies
+   see this post: http://zope3-demos.blogspot.com/2006/09/zcmlcondition.html
+
+9/25/2006
+  * pull into a bazaar vcs
+  * add in viewtemplate1.pt
+
+9/15/2006
+  * added mpdemo3, a simpler Jürgen masterpages sample
+  * added  three formlib samples - needs view source
+  * added one adapters demo - needs to be easier to follow
+  * it's all starting to get very unorganized now that
+    contents need to be added to successfully test an
+    example
+
+9/14/2006
+  * move project to http://code.google.com/p/zope3demos/
+
+9/13/2006
+  * have a "working" masterpages implementation example
+  * fixed name collision caused by using js and css for resources
+    - thank you, mdudzik
+  * massive refactoring to use simpler more consistent naming conventions
+    and masterpages
+
+09/12/2006
+  * added z3d.demo4.index.html - the first complex example in the zope.viewlet readme
+  * added view source with syntax highlighting on the example pages
+  * added contentprovider example
+  * added SourceScriptContentProvider to demo1.html... need to do so with all
+  * started testing different ways to employ masterpages
+
+

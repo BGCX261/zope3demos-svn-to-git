@@ -1,0 +1,17 @@
+<html>
+<head><title>Masterpage1 Demo</title></head>
+<link type="text/css" rel="stylesheet" href="/@@/zdcss/SyntaxHighlighter.css" />
+
+	<body>
+		<a href="/@@z3d.index.html">Back</a>
+
+
+
+			<tal:block replace="structure view/content" />
+
+
+    		<span tal:replace="structure provider:cp.SourceScriptContentProvider" />
+
+    	<p>&nbsp;</p>
+	</body>
+</html>

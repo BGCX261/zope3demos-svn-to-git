@@ -1,0 +1,54 @@
+==============================================================================
+Doctest generated Tue Sep 26 2006 15:44:29 GMT-0700 (Pacific Standard Time)
+==============================================================================
+
+Create the browser object we'll be using.
+
+    >>> from zope.testbrowser.testing import Browser
+    >>> browser = Browser()
+	>>> browser.addHeader('Authorization', 'Basic mgr:mgrpw')
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('Masterpages without macros 1').click()
+    >>> 'MyContentProvider success from cpdemo1' in browser.contents
+    True
+    >>> browser.getLink('Back').click()
+    >>> browser.getLink('Juergen Masterpages without macros 2').click()
+    >>> 'hang of this one yet' in browser.contents
+    True
+    >>> browser.getControl(name='query').value = 'foobar'
+    >>> browser.getControl('query').click()
+    >>> 'foobar' in browser.contents
+    True
+
+Check forms, had to escape some content to prevent "nested forms" from messing up mechanize
+also, needed to wrap textarea elements in form elements
+
+    >>> browser.getLink('Back').click()
+    >>> browser.getLink('http://localhost:8080/@@z3d.mpdemo3.page1.html').click()
+    >>> 'Page 1 zpt' in browser.contents
+    True
+    >>> 'MyContentProvider success from cpdemo1' in browser.contents
+    True
+    >>> browser.getLink('z3d.mpdemo3.page2.html').click()
+    >>> 'baseviewletmanager.pt' in browser.contents
+    True
+    >>> 'Page 2' in browser.contents
+    True
+    >>> browser.getLink('Back').click()
+    >>> browser.getLink('Masterpages demo4').click()
+    >>> 'this is z3d.mpdemo4.viewlet.pt' in browser.contents
+    True
+    >>> 'My Masterpage' in browser.contents
+    True
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('++skin++MySkin/@@viewtemplate1.html').click()
+    >>> 'test xyz' in browser.contents
+    True
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('++skin++MySkin2/@@viewtemplate1.html').click()
+    >>> 'test xyz' in browser.contents
+    True
+    >>> '<h2>' in browser.contents
+    True
+    >>> '</h2>' in browser.contents
+    True

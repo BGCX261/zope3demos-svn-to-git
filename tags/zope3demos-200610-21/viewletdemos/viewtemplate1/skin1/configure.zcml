@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+	<browser:template
+		for="..demo.MyView"
+		template="page.pt"
+		layer=".browser.MySkin"
+		/>
+
+	<interface
+	   interface=".browser.MySkin"
+	   type="zope.publisher.interfaces.browser.IBrowserSkinType"
+	   name="MySkin"
+	   />
+
+</configure>

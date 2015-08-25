@@ -1,0 +1,10 @@
+<h2>Contentprovider Demo 1</h2>
+<h4>output</h4>
+<textarea name="code" class="xml" cols=60 rows=10>
+ <tal:block replace="structure provider:boring.MyContentProvider" />
+</textarea>
+
+
+<!-- ignore: view source code -->
+<div tal:define="sources string:page.pt configure.zcml demo.py"
+	 tal:replace="structure provider:app.ViewSourceContentProvider" />

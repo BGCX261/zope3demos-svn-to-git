@@ -1,0 +1,11 @@
+<html><body>
+<h2>Success!</h2>
+<p>You are successfully showing a pushpage.</p>
+
+<span tal:content="context" />
+<dl>
+<dt>Try publising the demo4 vieletmanager provider:dvm4</dt>
+<dd><span tal:replace="structure folder" /></dd>
+<dd><span xtal:replace="structure provider:dvm4" /></dd>
+</dl>
+</body></html>

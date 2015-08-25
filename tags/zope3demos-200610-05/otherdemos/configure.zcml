@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="zope"
+    >
+
+	<include package=".formlib1" />
+
+	<include package=".formlib2" />
+
+	<include package=".adapters1" />
+
+</configure>

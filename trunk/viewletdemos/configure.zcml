@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+	xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="zope"
+    >
+
+	<include package=".demo1" />
+
+	<include package=".demo2" />
+
+	<include package=".demo3" />
+
+	<include package=".demo4" />
+
+	<include package=".cpdemo1" />
+
+	<include zcml:condition="installed z3c.viewtemplate" package=".viewtemplate1" />
+
+	<!-- in progress....
+		<include zcml:condition="installed z3c.menu" package=".menu1" />
+	-->
+
+</configure>

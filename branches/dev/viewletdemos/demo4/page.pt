@@ -1,0 +1,21 @@
+
+    <h2>ViewletDemo4</h2>
+
+
+<h4>output</h4>
+
+<textarea name="code" class="xhtml">
+<p tal:content="structure provider:z3d.demo4.viewletmanager"></p>
+</textarea>
+
+	<p>This example is the complex example in the zope.viewlet
+	 README.txt. It shows how apply a viewlet on content from a viewlet manager. In this
+	 case, the NameViewlet which returns the __name__ of all the items() in the context
+	 folder. For this example to work, you'll need to add some ZPT pages to the
+	 root folder.</p>
+
+<hr />
+
+<!-- ignore: view source code -->
+	<div tal:define="sources string:page.pt demoviewletmanager.pt configure.zcml demo.py"
+		 tal:replace="structure provider:app.ViewSourceContentProvider" />

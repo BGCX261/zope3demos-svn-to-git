@@ -1,0 +1,28 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+
+	<browser:page
+	   for="*"
+	   name="vdemo1.html"
+	   permission="zope.View"
+	   class=".MasterpageView"
+	   />
+
+	<browser:viewletManager
+		name="demo1vmprovider"
+		permission="zope.Public"
+		provides=".demo.IViewletManager"
+		template="viewletmanager.pt"
+		/>
+
+	<browser:viewlet
+		name="demo1viewlet"
+		for="*"
+		manager=".demo.IViewletManager"
+		class=".demo.Viewlet"
+		permission="zope.Public"
+		/>
+
+</configure>

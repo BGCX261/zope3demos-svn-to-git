@@ -1,0 +1,59 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="zope"
+    >
+
+	<include package=".viewletdemos" />
+	<include package=".masterpagedemos" />
+    <include package=".otherdemos" />
+    <include package=".catalogdemos" />
+
+    <browser:page
+        name="masterpage.html"
+        for="*"
+        template="master.pt"
+        permission="zope.Public"
+        />
+
+	<browser:page
+		name="vdemo.html"
+		for="*"
+		class=".app.RedirectView"
+		permission="zope.Public"
+		/>
+
+	<browser:page
+		name="z3d.index.html"
+		for="*"
+		template="index.pt"
+		permission="zope.Public"
+		/>
+
+	<adapter
+		factory=".app.SourceScriptContentProvider"
+		name="cp.SourceScriptContentProvider"
+		/>
+
+	<adapter
+		provides="zope.contentprovider.interfaces.IContentProvider"
+		factory=".app.ViewSourceContentProvider"
+		name="app.ViewSourceContentProvider"
+		/>
+
+	<interface
+		interface=".app.ISources"
+		type="zope.contentprovider.interfaces.ITALNamespaceData"
+		/>
+
+	<browser:resourceDirectory
+		name="zdjs"
+		directory="js"
+		/>
+
+	<browser:resourceDirectory
+		name="zdcss"
+		directory="css"
+		/>
+
+</configure>

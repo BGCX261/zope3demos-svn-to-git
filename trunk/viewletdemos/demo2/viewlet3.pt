@@ -1,0 +1,1 @@
+<b>viewlet3.pt success!</b> <i tal:content="view/classnamespacetest|nothing" />

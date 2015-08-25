@@ -1,0 +1,60 @@
+Catalog1 tests
+==============
+
+Create the browser object we'll be using::
+
+    >>> from zope.testbrowser import Browser
+    >>> browser = Browser()
+    >>> browser.handleErrors = False
+	>>> browser.addHeader('Authorization', 'Basic globalmgr:globalmgrpw')
+
+register unique id utility, do not register a name::
+
+    >>> browser.open('http://localhost/++etc++site/default/@@contents.html')
+    >>> browser.getLink('Unique Id Utility').click()
+    >>> browser.getControl(name='new_value').value = 'uidutil'
+    >>> browser.getControl('Apply').click()
+    >>> browser.getControl('Register this object').click()
+    >>> browser.getControl(name="field.actions.register").click()
+
+register catalog::
+
+    >>> browser.open('http://localhost/++etc++site/default/@@contents.html')
+    >>> browser.getLink('Catalog').click()
+    >>> browser.getControl(name='new_value').value = 'cat1'
+    >>> browser.getControl('Apply').click()
+    >>> browser.getControl('Register this object').click()
+    >>> browser.getControl('Register As').value = 'cat1'
+    >>> browser.getControl(name="field.actions.register").click()
+    >>> 'This object is registered' in browser.contents
+    True
+    >>> browser.getLink('Contents').click()
+    >>> browser.getLink('Text Index').click()
+    >>> browser.getControl('Interface', index=0).value = ['zope.pagetemplate.interfaces.IPageTemplate']
+    >>> browser.getControl('Field Name', index=0).value = '__call__'
+    >>> browser.getControl('Field Callable', index=0).selected = True
+    >>> browser.getControl(name='add_input_name', index=0).value = 'zpts'
+    >>> browser.getControl('Add').click()
+
+add a zpt page
+
+  >>> browser.open('http://localhost/+/zope.app.zptpage.ZPTPage=')
+  >>> 'Add a ZPT Page' in browser.contents
+  True
+  >>> form = browser.getForm(index=0)
+  >>> form.getControl('Source').value="apple test"
+  >>> browser.getControl(name='add_input_name').value = 'zptname1'
+  >>> form.getControl(name="UPDATE_SUBMIT").click()
+
+test the search
+
+  >>> browser.open('http://localhost/@@z3d.catalog1.index.html')
+  >>> 'zptname1' in browser.contents
+  True
+
+
+
+
+
+
+

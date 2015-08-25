@@ -1,0 +1,5 @@
+
+
+	<ul tal:repeat="viewlet view/viewlets">
+	    <li tal:content="structure viewlet/render" />
+	</ul>

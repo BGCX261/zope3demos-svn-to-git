@@ -1,0 +1,28 @@
+
+
+<h3>Table</h3>
+<table border="1" tal:define="viewlets view/viewlets">
+   <tr tal:repeat="row viewlets">
+     <td tal:repeat="column row">
+      <tal:block replace="structure column/render" />
+      </td>
+   </tr>
+</table>
+
+<h3>Table with header</h3>
+<table border="1" tal:define="viewlets view/viewlets">
+
+   <!-- we've defined the column_title in the <viewlet directive -->
+   <!-- we access it here but only need it for the first row -->
+   <tr tal:define="row python:viewlets[0]">
+     <th tal:repeat="column row" tal:content="structure column/column_title">
+     </th>
+   </tr>
+
+   <tr tal:repeat="row viewlets">
+     <td tal:repeat="column row">
+      <tal:block replace="structure column/render" />
+      </td>
+   </tr>
+</table>
+

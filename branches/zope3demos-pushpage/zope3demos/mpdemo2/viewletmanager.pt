@@ -1,0 +1,6 @@
+
+<tal:block tal:repeat="viewlet view/viewlets">
+
+	<span tal:replace="structure viewlet/render" />
+
+</tal:block>

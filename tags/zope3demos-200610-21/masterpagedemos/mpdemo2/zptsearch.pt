@@ -1,0 +1,3 @@
+
+<h2 style="color:red;">This viewlet only appears for Zope Page Template content</h2>
+<!-- see the for="" directive in zcml -->

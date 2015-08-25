@@ -1,0 +1,3 @@
+<html metal:use-macro="context/@@standard_macros/view"><body metal:fill-slot="body">
+view of index4.pt, can we show the fields read only?
+</body></html>

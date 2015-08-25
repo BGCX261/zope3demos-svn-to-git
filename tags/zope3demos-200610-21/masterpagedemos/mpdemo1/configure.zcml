@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="zope"
+    >
+
+
+  <browser:page
+      for="*"
+      name="z3d.mpdemo1.masterpage.html"
+      template="masterpage.pt"
+      permission="zope.View"
+      />
+
+  <browser:page
+      for="*"
+      name="z3d.mpdemo1.index.html"
+      class=".demo.PageView"
+      permission="zope.View"
+      />
+
+</configure>

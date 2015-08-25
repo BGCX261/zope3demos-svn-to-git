@@ -1,0 +1,58 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:pushpage="http://namespaces.zope.org/pushpage">
+
+      <!--<pushpage:view
+        for="*"
+        name="mp3page3.html"
+        permission="zope.Public"
+        template="page3.pt"
+        mapping=".demo.MyMapping"
+        layer="mylayer"
+        />-->
+
+	<browser:page
+		for="*"
+		name="z3d.mpdemo3.page1.html"
+		class=".demo.Page1"
+		permission="zope.Public"
+		/>
+
+	<browser:page
+		for="*"
+		name="z3d.mpdemo3.page2.html"
+		class=".demo.Page2"
+		permission="zope.Public"
+		/>
+
+	<browser:viewletManager
+		name="app.Content"
+		permission="zope.Public"
+		class=".demo.BaseViewletManager"
+		template="baseviewletmanager.pt"
+		provides=".demo.IBaseViewletManager"
+		/>
+
+    <!-- view works for both interfaces and classes when interface
+         is defined for .demo.Page1 -->
+	<browser:viewlet
+	    name="z3d.mpdemo3.viewlet1"
+		view=".demo.Page1"
+		permission="zope.Public"
+		template="page1.pt"
+		manager=".demo.IBaseViewletManager"
+		/>
+
+	<!-- this fails because interface not defined for .demo.Page2 -->
+	<browser:viewlet
+		name="z3d.mpdemo3.viewlet2"
+		view=".demo.Page2"
+		permission="zope.Public"
+		template="page2.pt"
+		manager=".demo.IBaseViewletManager"
+		/>
+
+
+
+</configure>

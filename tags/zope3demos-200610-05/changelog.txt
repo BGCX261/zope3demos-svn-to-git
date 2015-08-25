@@ -1,0 +1,39 @@
+Changelog
+=========
+
+
+9/26/2006
+  * added functional tests, wow makes a big difference
+  * working example of Juergen masterpages as detailed in
+    Stephan Richter's blog http://blogs.lovelysystems.com/srichter/2006/09/20/the-skin-browser-and-lovely-systems-new-development-workflow/
+
+9/25/2006
+  * pull into a bazaar vcs
+  * add in viewtemplate1.pt
+
+9/15/2006
+  * added mpdemo3, a simpler Juergen masterpages sample
+  * added  three formlib samples - needs view source
+  * added one adapters demo - needs to be easier to follow
+  * it's all starting to get very unorganized now that
+    contents need to be added to successfully test an
+    example
+
+9/14/2006
+  * move project to http://code.google.com/p/zope3demos/
+
+9/13/2006
+  * have a "working" masterpages implementation example
+  * fixed name collision caused by using js and css for resources
+    - thank you, mdudzik
+  * massive refactoring to use simpler more consistent naming conventions
+    and masterpages
+
+09/12/2006
+  * added z3d.demo4.index.html - the first complex example in the zope.viewlet readme
+  * added view source with syntax highlighting on the example pages
+  * added contentprovider example
+  * added SourceScriptContentProvider to demo1.html... need to do so with all
+  * started testing different ways to employ masterpages
+
+

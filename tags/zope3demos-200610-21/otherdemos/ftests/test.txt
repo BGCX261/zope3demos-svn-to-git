@@ -1,0 +1,111 @@
+==============================================================================
+Doctest generated Tue Sep 26 2006 15:44:29 GMT-0700 (Pacific Standard Time)
+==============================================================================
+
+Create the browser object we'll be using.
+
+    >>> from zope.testbrowser.testing import Browser
+    >>> browser = Browser()
+	>>> browser.addHeader('Authorization', 'Basic mgr:mgrpw')
+    >>> browser.open('http://localhost/@@z3d.index.html')
+
+Test formlib1 demo
+
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('/@@z3d.formlib1.page1.html').click()
+    >>> '''form.name''' in browser.contents
+    True
+    >>> 'form.max_size' in browser.contents
+    True
+    >>> '''form.min_size''' in browser.contents
+    True
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('/@@z3d.formlib1.page1-length.html').click()
+    >>> '3' in browser.contents
+    True
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('/@@z3d.formlib1.page1-name.html').click()
+    >>> browser.getControl(name='query').value = 'asdf'
+    >>> browser.getControl('submit').click()
+    >>> 'INVALID QUERY' in browser.contents
+    True
+    >>> browser.getControl(name='query').value = 'name'
+    >>> browser.getControl('submit').click()
+    >>> 'name' in browser.contents
+    True
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('/@@z3d.formlib1.page2.html').click()
+    >>> browser.getControl(name='form.name').value = 'asdf'
+    >>> browser.getControl(name='form.min_size').value = 'df'
+    >>> browser.getControl(name='form.max_size').value = 'df'
+    >>> browser.getControl('submit').click()
+    >>> 'there were errors' in browser.contents
+    True
+    >>> 'Invalid floating point data' in browser.contents
+    True
+    >>> '''updated: {'name': u'asdf'}''' in browser.contents
+    True
+    >>> browser.getControl(name='form.name').value = 'test name'
+    >>> browser.getControl(name='form.min_size').value = '1'
+    >>> browser.getControl(name='form.max_size').value = '2'
+    >>> browser.getControl('submit').click()
+    >>> '''updated: {'min_size': 1.0, 'name': u'test name', 'max_size': 2.0}''' in browser.contents
+    True
+    >>> browser.getControl(name='form.min_size').value = '2'
+    >>> browser.getControl(name='form.max_size').value = '1'
+    >>> browser.getControl('submit').click()
+    >>> '''updated: {'min_size': 2.0, 'name': u'test name', 'max_size': 1.0}''' in browser.contents
+    True
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('/@@z3d.formlib1.page3.html').click()
+    >>> browser.getControl(name='form.name').value = 'name'
+    >>> browser.getControl(name='form.min_size').value = '1'
+    >>> browser.getControl(name='form.max_size').value = '2'
+    >>> browser.getControl('submit').click()
+    >>> '''updated: {'min_size': 1.0, 'name': u'name', 'max_size': 2.0}''' in browser.contents
+    True
+    >>> browser.getControl(name='form.min_size').value = '3'
+    >>> browser.getControl('submit').click()
+    >>> 'there were invariant errors' in browser.contents
+    True
+    >>> 'Maximum is less than minimum' in browser.contents
+    True
+    >>> '''updated: {'min_size': 3.0, 'name': u'name', 'max_size': 2.0}''' in browser.contents
+    True
+
+Test formlib2 demo
+
+    >>> browser.open('http://localhost/')
+    >>> browser.getLink('[top]').click()
+    >>> browser.getLink('Formlib Demo Object').click()
+    >>> browser.getControl(name='new_value').value = 'demof2'
+    >>> browser.getControl('Apply').click()
+    >>> browser.getLink('demof2').click()
+    >>> 'view of index4.pt, can we show the fields read only?' in browser.contents
+    True
+    >>> browser.getLink('Edit').click()
+    >>> 'name' in browser.contents
+    True
+    >>> 'Minimum size' in browser.contents
+    True
+    >>> 'Maximum size' in browser.contents
+    True
+    >>> browser.getControl('name').value = 'demo'
+    >>> browser.getControl('Minimum size').value = '1'
+    >>> browser.getControl('Maximum size').value = '2'
+    >>> browser.getControl('Apply').click()
+    >>> 'Updated' in browser.contents
+    True
+    >>> browser.getControl('Minimum size').value = '2'
+    >>> browser.getControl('Maximum size').value = '1'
+    >>> browser.getControl('Apply').click()
+    >>> 'There were errors' in browser.contents
+    True
+    >>> 'Maximum is less than minimum' in browser.contents
+    True
+    >>> browser.getControl('Minimum size').value = 'asdf'
+    >>> browser.getControl('Apply').click()
+    >>> 'There were errors' in browser.contents
+    True
+    >>> 'Invalid floating point data' in browser.contents
+    True

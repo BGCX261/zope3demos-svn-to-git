@@ -1,0 +1,29 @@
+Changelog
+=========
+
+9/15/2006
+  * added mpdemo3, a simpler Juergen masterpages sample
+  * added  three formlib samples - needs view source
+  * added one adapters demo - needs to be easier to follow
+  * it's all starting to get very unorganized now that
+    contents need to be added to successfully test an
+    example
+
+9/14/2006
+  * move project to http://code.google.com/p/zope3demos/
+
+9/13/2006
+  * have a "working" masterpages implementation example
+  * fixed name collision caused by using js and css for resources
+    - thank you, mdudzik
+  * massive refactoring to use simpler more consistent naming conventions
+    and masterpages
+
+09/12/2006
+  * added vdemo4.html - the first complex example in the zope.viewlet readme
+  * added view source with syntax highlighting on the example pages
+  * added contentprovider example
+  * added SourceScriptContentProvider to demo1.html... need to do so with all
+  * started testing different ways to employ masterpages
+
+

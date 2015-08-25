@@ -1,0 +1,10 @@
+<html>
+<head><title>Masterpage</title></head>
+
+<body>
+<h2>My Masterpage</h2>
+<span tal:replace="structure provider:z3d.mpdemo4.content" />
+
+
+</body>
+</html>

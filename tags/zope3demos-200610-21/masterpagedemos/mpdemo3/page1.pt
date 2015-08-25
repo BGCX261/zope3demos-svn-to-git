@@ -1,0 +1,6 @@
+<b>Page 1 zpt</b>
+<br />
+Can we still access our contentprovider demo?
+ <blockquote>
+ <tal:block replace="structure provider:boring.MyContentProvider" />
+ </blockquote>

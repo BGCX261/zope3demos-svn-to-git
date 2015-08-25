@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+	xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="zope"
+    >
+
+	<include package=".formlib1" />
+
+	<include package=".formlib2" />
+
+	<include package=".adapters1" />
+
+	<include package=".objectsofobjects1" />
+
+	<include package=".objectsofobjects2" />
+
+</configure>

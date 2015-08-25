@@ -1,0 +1,8 @@
+<configure
+	xmlns="http://www.namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser">
+
+
+	<include package=".catalog1" />
+
+</configure>

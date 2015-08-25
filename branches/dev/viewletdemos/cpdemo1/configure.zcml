@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="zope"
+    >
+
+  <browser:page
+      for="*"
+      template="page.pt"
+      name="cpdemo1.html"
+      class=".PageView"
+      permission="zope.View"
+      />
+
+  <adapter
+  		factory=".demo.MyContentProvider"
+  		name="boring.MyContentProvider"
+  		/>
+
+</configure>

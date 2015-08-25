@@ -1,0 +1,5 @@
+
+ <ul class="demo1viewletmanager">
+    <li tal:repeat="viewlet options/viewlets"
+               tal:content="structure viewlet/render" />
+  </ul>

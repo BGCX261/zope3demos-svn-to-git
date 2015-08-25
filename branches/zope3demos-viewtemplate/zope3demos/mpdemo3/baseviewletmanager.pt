@@ -1,0 +1,5 @@
+
+<div style="border:1px solid black;">
+baseviewletmanager.pt
+<div tal:repeat="viewlet view/viewlets" tal:content="structure viewlet/render" />
+</div>

@@ -1,0 +1,44 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+
+  <content class=".app.Person">
+    <require
+        permission="zope.View"
+    	interface=".app.IPerson"
+    	/>
+    <require
+        permission="zope.ManageContent"
+   		set_schema=".app.IPerson"
+    	/>
+  </content>
+
+  <content class=".app.AddressBook">
+    <require
+        permission="zope.View"
+    	interface=".app.IAddressBook"
+    	/>
+    <require
+        permission="zope.ManageContent"
+   		set_schema=".app.IAddressBook"
+    	/>
+  </content>
+
+
+  <browser:page
+  	   name="edit.html"
+       class=".browser.EditFormView"
+	   permission="zope.ManageContent"
+	   for=".app.IAddressBook"
+	   menu="zmi_views" title="Edit"
+	   />
+
+  <browser:addMenuItem
+      class=".app.AddressBook"
+ 	  title="Z3D: AddressBook"
+ 	  permission="zope.ManageContent"
+
+ 	  />
+
+</configure>

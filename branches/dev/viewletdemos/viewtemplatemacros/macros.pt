@@ -1,0 +1,7 @@
+<metal:block define-macro="macro1">
+	<div>macro1</div>
+</metal:block>
+
+<metal:block define-macro="macro2">
+	<div>macro2</div>
+</metal:block>

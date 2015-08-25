@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>masterpage 2</title>
+	</head>
+	<link type="text/css" rel="stylesheet" href="/@@/zdcss/SyntaxHighlighter.css" />
+	<body>
+	<a href="/@@z3d.index.html">Back</a>
+
+	<li><a href="/@@z3d.mpdemo3.page1.html">z3d.mpdemo3.page1.html</a></li>
+	<li> <a href="/@@z3d.mpdemo3.page2.html">z3d.mpdemo3.page2.html</a></li>
+<h2>Header</h2>
+
+<h4>output</h4>
+<textarea name="code" class="html">
+<span tal:replace="structure provider:app.Content" />
+</textarea>
+
+
+<!-- ignore: view source code -->
+	<div tal:define="sources string:configure.zcml demo.py master.pt baseviewletmanager.pt page1.pt page2.pt"
+		 tal:replace="structure provider:app.ViewSourceContentProvider" />
+    	<span tal:replace="structure provider:cp.SourceScriptContentProvider" />
+
+	</body>
+</html>

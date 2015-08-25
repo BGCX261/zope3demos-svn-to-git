@@ -1,0 +1,75 @@
+<configure
+    xmlns='http://namespaces.zope.org/zope'
+    xmlns:browser='http://namespaces.zope.org/browser'>
+
+  <content class=".article.Person">
+    <require
+        permission="zope.View"
+    	interface=".interfaces.IPerson"
+    />
+    <require
+        permission="zope.ManageContent"
+   		set_schema=".interfaces.IPerson"
+    />
+  </content>
+
+  <content class=".article.Pages">
+    <require
+        permission="zope.View"
+    	interface=".interfaces.IPages"
+    />
+    <require
+        permission="zope.ManageContent"
+    	set_schema=".interfaces.IPages"
+    />
+  </content>
+
+  <content class=".article.Article">
+    <require
+        permission="zope.View"
+    	interface=".interfaces.IArticle"
+    />
+    <require
+        permission="zope.ManageContent"
+    	set_schema=".interfaces.IArticle"
+    />
+  </content>
+
+  <content class=".article.Nonsens">
+    <require
+        permission="zope.View"
+    	interface=".interfaces.INonsens"
+    />
+    <require
+        permission="zope.ManageContent"
+    	set_schema=".interfaces.INonsens"
+    />
+  </content>
+
+  <browser:editform
+      label="Change nonsens article data"
+      name="edit.html"
+      schema=".interfaces.INonsens"
+      class=".widget.NonsensEditView"
+      menu="zmi_views"
+      title="Edit"
+      permission="zope.ManageContent"
+      />
+
+  <browser:addform
+      label="Add a nonsens article"
+      name="AddNonsensArticle.html"
+      schema=".interfaces.INonsens"
+      class=".widget.NonsensEditView"
+      content_factory=".article.Nonsens"
+      permission="zope.ManageContent"
+      />
+
+  <browser:addMenuItem
+      title="NonsensArticle"
+      class=".article.Nonsens"
+      permission="zope.ManageContent"
+      view="AddNonsensArticle.html"
+      />
+
+</configure>

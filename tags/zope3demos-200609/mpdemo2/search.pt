@@ -1,0 +1,17 @@
+
+    <h2>Masterpages without macros 2</h2>
+
+    <p>Warning: I haven't got the hang of this one yet, I'm not sure how to make
+    the parts reusable.</p>
+
+    <p>This example is based on Juergen Kartnaller work in
+    <a href="http://www.nabble.com/Alternatives-to-macros-t2267984.html#a6303373">Stephan Richter's post</a>
+    on zope3-users@zope.org. </p>
+
+<form>
+<input name="query" value="" size="35" /> <input type=submit value=" query " />
+</form>
+
+<span tal:replace="view/results" />
+
+

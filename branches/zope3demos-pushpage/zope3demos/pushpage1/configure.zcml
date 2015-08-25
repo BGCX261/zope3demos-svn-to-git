@@ -1,0 +1,66 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:pushpage="http://namespaces.zope.org/pushpage"
+	xmlns:browser2="http://namespaces.zope.org/browser2"
+	>
+
+ 	<pushpage:view
+        for="*"
+        name="pushpage1.html"
+        permission="zope.Public"
+        template="page.pt"
+        mapping=".demo.templateData"
+        />
+
+	<browser:page
+		name="pushpage4.html"
+		for="*"
+		permission="zope.Public"
+		class=".demo.PushPage4"
+		/>
+
+ 	<browser2:pagesFromClass
+ 		for="*"
+ 		class=".demo.PushPage5"
+ 		>
+ 		<page
+ 			name="fromclass1.html"
+ 			attribute="page1"
+ 			permission="zope.Public"
+ 			/>
+ 		<page
+ 			name="fromclass2.html"
+ 			attribute="page2"
+ 			permission="zope.Public"
+ 			/>
+ 		<page
+ 			name="fromclass3.html"
+ 			attribute="render"
+ 			permission="zope.Public"
+ 			/>
+
+ 	</browser2:pagesFromClass>
+
+  	<browser2:pagesFromClass
+ 		for="*"
+ 		class=".demo.MasterPage1"
+ 		>
+ 		<page
+ 			name="fromclass21.html"
+ 			attribute="page1"
+ 			permission="zope.Public"
+ 			/>
+ 		<page
+ 			name="fromclass22.html"
+ 			attribute="page2"
+ 			permission="zope.Public"
+ 			/>
+ 		<page
+ 			name="fromclass23.html"
+ 			attribute="render"
+ 			permission="zope.Public"
+ 			/>
+
+ 	</browser2:pagesFromClass>
+</configure>

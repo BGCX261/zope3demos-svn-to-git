@@ -1,0 +1,40 @@
+<configure
+	xmlns="http://namespaces.zope.org/browser"
+	xmlns:zope="http://namespaces.zope.org/zope"
+	>
+
+	<page
+	  name="mpdemo2.html"
+	  for="*"
+	  class=".search.SearchView"
+	  permission="zope.Public"
+	  />
+
+	<viewletManager
+		name="mp2.searchviewletmanager"
+		permission="zope.Public"
+        provides=".interfaces.IContentManager"
+		template="viewletmanager.pt"
+		class=".search.SearchViewManager"
+		/>
+
+	 <viewlet
+	   name="mp2search"
+	   for="*"
+	   view=".interfaces.ISearchView"
+	   manager=".interfaces.IContentManager"
+	   class=".search.SearchViewlet"
+	   template="search.pt"
+	   permission="zope.Public"
+	   />
+
+	 <viewlet
+	   name="mp2searchzpt"
+	   for="zope.app.zptpage.interfaces.IZPTPage"
+	   view=".interfaces.ISearchView"
+	   manager=".interfaces.IContentManager"
+	   class=".search.SearchViewlet"
+	   template="zptsearch.pt"
+	   permission="zope.Public"
+	   />
+</configure>

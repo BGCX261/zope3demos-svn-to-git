@@ -1,0 +1,47 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+
+	<!-- And example of a page. You really only need the class to have a
+     	 registration point. -->
+
+	<browser:page
+	    name="z3d.mpdemo4.index.html"
+	    for="*"
+	    class=".app.DemoPage"
+	    permission="zope.Public"
+	    />
+
+	<!-- The main template used by all pages. It only contains the very basic
+	     structure and a bunch of viewlet managaer calls. -->
+	<browser:template
+	    template="masterpage.pt"
+	    for=".app.IDemoPage"
+	    />
+
+	<browser:viewletManager
+		name="z3d.mpdemo4.content"
+		permission="zope.Public"
+		provides=".app.IContentViewletManager"
+	    />
+
+	<!-- Viewlet registered for .app.IContent viewletManager and tied to
+		.app.DemoPage view -->
+	<browser:viewlet
+	    name="z3d.mpdemo4.viewlet"
+	    for="*"
+	    manager=".app.IContentViewletManager"
+	    view=".app.DemoPage"
+	    class=".app.DemoViewlet"
+	    permission="zope.Public"
+	    />
+
+
+	<!-- This is the template is registered for the z3d.mpdemo4.viewlet viewlet. -->
+	<browser:template
+	    template="viewlet.pt"
+	    for=".app.DemoViewlet"
+	    />
+
+</configure>

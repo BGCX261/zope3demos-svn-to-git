@@ -1,0 +1,30 @@
+    <h2>ViewletDemo1</h2>
+
+
+<h4>output</h4>
+
+<textarea name="code" class="xml">
+<p tal:content="structure provider:z3d.demo1.viewletmanager" />
+</textarea>
+
+
+
+	<p>This example illustrates:</p>
+
+	<ul>
+		<li> how to wire viewlets into a site</li>
+		<li> using a template with the viewletmanager</li>
+		<li> using the new tal namespace <i>provider</i> to present the viewletmanager</li>
+		<li> using options/viewlet within the viewletmanager template to render the viewlet</li>
+		<li> using a class to return the viewlet's rendered content</li>
+	</ul>
+
+	<p>Caveats: In this example, since only one viewlet was
+	returned, using viewlets may be overkill and a
+	contentprovider may be a better option.</p>
+
+<hr />
+
+<!-- ignore: view source code -->
+	<div tal:define="sources string:page.pt viewletmanager.pt configure.zcml demo.py"
+		 tal:replace="structure provider:app.ViewSourceContentProvider" />

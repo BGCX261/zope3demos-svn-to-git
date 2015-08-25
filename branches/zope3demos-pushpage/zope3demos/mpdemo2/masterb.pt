@@ -1,0 +1,28 @@
+
+
+<html>
+	<head>
+		<title>masterpage 2</title>
+	</head>
+	<link type="text/css" rel="stylesheet" href="/@@/zdcss/SyntaxHighlighter.css" />
+	<body>
+	<a href="/@@vdemo.html">Back</a>
+
+	<span tal:replace="structure provider:mp2.searchviewletmanager" />
+
+
+<hr />
+
+<h4>output from page</h4>
+
+<textarea name="code" class="html">
+<span tal:replace="structure provider:mp2.searchviewletmanager" />
+</textarea>
+
+<!-- ignore: view source code -->
+	<div tal:define="sources string:configure.zcml base.py interfaces.py search.py master.pt viewletmanager.pt search.pt"
+		 tal:replace="structure provider:app.ViewSourceContentProvider" />
+    	<span tal:replace="structure provider:cp.SourceScriptContentProvider" />
+
+	</body>
+</html>

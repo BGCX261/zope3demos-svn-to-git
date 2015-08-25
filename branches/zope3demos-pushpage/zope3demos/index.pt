@@ -1,0 +1,33 @@
+<html><head></head><body>
+
+<h2> Viewlet/Contentprovider Examples </h2>
+
+	<ul>
+		<li><a href="/@@vdemo1.html">Viewlet 1</a></li>
+		<li><a href="/@@vdemo2.html">Viewlet 2</a></li>
+	</ul>
+
+	<ul>
+		<p>Add content to root folder for next two demos.</p>
+		<li><a href="/@@vdemo3.html">Viewlet 3</a> </li>
+		<li><a href="/@@vdemo4.html">Viewlet 4</a> </li>
+		<li><a href="/@@cpdemo1.html">Contentprovider 1</a> </li>
+	</ul>
+
+<h2>Masterpage Examples</h2>
+<p>An exploration of alternatives to macros using viewlets and content providers</p>
+
+
+	<ul>
+		<li><a href="/@@mpdemo1.html">Masterpages without macros 1</a> </li>
+		<li><a href="/@@mpdemo2.html">Juergen Masterpages without macros 2</a> </li>
+	</ul>
+
+<h2>Formlib Examples</h2>
+	<ul>
+		<li><a href="/@@formlib1.html">Formlib 1</a></li>
+		<li><a href="/@@formlib2.html">Formlib 2</a></li>
+		<li><a href="/@@formlib3.html">Formlib 3</a></li>
+	</ul>
+
+</body></html>

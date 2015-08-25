@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+	<browser:view
+	   name="viewtemplate1.html"
+	   class=".demo.MyView"
+	   permission="zope.Public"
+	   for="*"
+	   />
+	<include package=".skin1" />
+	<include package=".skin2" />
+</configure>

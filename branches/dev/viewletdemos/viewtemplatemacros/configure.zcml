@@ -1,0 +1,66 @@
+<configure
+	xmlns="http://namespaces.zope.org/zope"
+	xmlns:browser="http://namespaces.zope.org/browser"
+	>
+
+	<!-- And example of a page. You really only need the class to have a
+     	 registration point. -->
+	<browser:page
+	    name="z3d.viewtemplatemacros.index.html"
+	    for="*"
+	    class=".app.DemoPage"
+	    permission="zope.Public"
+	    />
+
+	<!-- The main template used by all pages. It only contains the very basic
+	     structure and a bunch of viewlet manager calls. -->
+	<browser:template
+	    template="masterpage.pt"
+	    for=".app.IDemoPage"
+	    />
+
+
+	<!-- ViewletManager -->
+	<browser:viewletManager
+		name="z3d.viewtemplatemacros.content"
+		permission="zope.Public"
+		provides=".app.IContentViewletManager"
+	    />
+
+	<!-- First viewlet registered for .app.IContentViewletManager and tied to
+		.app.DemoPage view -->
+	<browser:viewlet
+	    name="z3d.viewtemplatemacros.viewlet1"
+	    for="*"
+	    manager=".app.IContentViewletManager"
+	    view=".app.DemoPage"
+	    class=".app.DemoViewlet"
+	    permission="zope.Public"
+	    />
+	    
+	<!-- This is the macro registered for the z3d.viewtemplatemacros.viewlet1 viewlet. -->
+	<browser:template
+	    template="macros.pt"
+	    macro="macro1"
+	    for=".app.DemoViewlet"
+	    />
+
+	<!-- Second viewlet registered for .app.IContent viewletManager and tied to
+		.app.DemoPage view -->
+	<browser:viewlet
+	    name="z3d.viewtemplatemacros.viewlet2"
+	    for="*"
+	    manager=".app.IContentViewletManager"
+	    view=".app.DemoPage"
+	    class=".app.DemoViewlet2"
+	    permission="zope.Public"
+	    />
+	    
+	<!-- This is the template is registered for the z3d.viewtemplatemacros.viewlet viewlet. -->
+	<browser:template
+	    template="macros.pt"
+	    macro="macro2"
+	    for=".app.DemoViewlet2"
+	    />    
+
+</configure>

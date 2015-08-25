@@ -1,0 +1,53 @@
+==============================================================================
+Doctest generated Tue Sep 26 2006 15:44:29 GMT-0700 (Pacific Standard Time)
+==============================================================================
+
+Create the browser object we'll be using.
+
+    >>> from zope.testbrowser.testing import Browser
+    >>> browser = Browser()
+	>>> browser.addHeader('Authorization', 'Basic mgr:mgrpw')
+    >>> browser.open('http://localhost/@@z3d.index.html')
+
+main page
+
+    >>> browser.getLink('Viewlet 1').click()
+    >>> 'Demo1Viewlet success!' in browser.contents
+    True
+
+check the viewletdemo1
+
+    >>> browser.getLink('Back').click()
+    >>> browser.getLink('Viewlet 2').click()
+    >>> 'viewlet2.pt success!' in browser.contents
+    True
+    >>> 'viewlet3.pt success!' in browser.contents
+    True
+    >>> 'Viewlet1 in class' in browser.contents
+    True
+	>>> browser.open('http://localhost/@@z3d.demo3.index.html')
+    >>> 'ViewletDemo3' in browser.contents
+    True
+    >>> 'output' in browser.contents
+    True
+
+Since contents of folder are empty, we must add some
+
+    >>> browser.open('http://localhost/@@+/action.html?type_name=zope.app.dtmlpage.DTMLPage')
+    >>> browser.getControl('Source').value = 'dtml1'
+    >>> browser.getControl(name='add_input_name').value = 'dtml1'
+    >>> browser.getControl('Source').value = 'dtml1 source'
+    >>> browser.getControl('Add').click()
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('Viewlet 4').click()
+    >>> 'ViewletDemo4' in browser.contents
+    True
+    >>> 'we access it here but only need it for the first row' in browser.contents
+    True
+
+Like the last test, it's difficult to test output because the output varies
+
+    >>> browser.open('http://localhost/@@z3d.index.html')
+    >>> browser.getLink('Contentprovider 1').click()
+    >>> 'MyContentProvider success from cpdemo1' in browser.contents
+    True

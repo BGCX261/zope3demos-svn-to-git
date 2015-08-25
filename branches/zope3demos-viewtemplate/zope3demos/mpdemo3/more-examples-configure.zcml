@@ -1,0 +1,38 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  >
+
+	<browser:page
+		for="*"
+		name="mp3page1.html"
+		class=".demo.Page1"
+		permission="zope.Public"
+		/>
+
+	<browser:page
+		for="*"
+		name="mp3page2.html"
+		class=".demo.Page2"
+		permission="zope.Public"
+		/>
+
+
+    <!-- view works for both interfaces and classes -->
+	<browser:viewlet
+	    name="page1viewlet"
+		view=".demo.Page1"
+		permission="zope.Public"
+		template="page1.pt"
+		manager=".demo.IBaseViewletManager"
+		/>
+
+	<browser:viewlet
+		name="page2viewlet"
+		for=".demo.Page2"
+		permission="zope.Public"
+		template="page2.pt"
+		manager=".demo.IBaseViewletManager"
+		/>
+
+ </configure>

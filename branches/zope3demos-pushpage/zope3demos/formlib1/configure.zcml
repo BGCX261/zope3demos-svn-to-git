@@ -1,0 +1,43 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  >
+
+	<browser:pages
+		  for="*"
+		  class=".demo.Formlib1"
+		  permission="zope.ManageContent"
+		  >
+	  	<browser:page
+	  	  name="formlib1.html"
+	  	  attribute="__call__"
+	  	  />
+	  	<browser:page
+	  	  name="formlib1-length.html"
+	  	  attribute="length"
+	  	  />
+	  	<browser:page
+	  	  name="formlib1-name.html"
+	  	  attribute="name"
+	  	  />
+	  </browser:pages>
+
+
+
+	  	<browser:page
+	  	  name="formlib2.html"
+	  	  for="*"
+	  	  permission="zope.ManageContent"
+	  	  class=".demo.Formlib2"
+	  	  />
+
+	  	<browser:page
+	  	  name="formlib3.html"
+	  	  for="*"
+	  	  permission="zope.ManageContent"
+	  	  class=".demo.Formlib3"
+	  	  />
+
+
+
+ </configure>

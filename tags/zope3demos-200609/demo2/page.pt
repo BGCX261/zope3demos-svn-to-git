@@ -1,0 +1,43 @@
+
+    <h2>ViewletDemo2</h2>
+
+    <h4>output 1</h4>
+
+<textarea name="code" class="xhtml">
+<div tal:content="structure provider:demo2vmprovider"></div>
+</textarea>
+
+	<p>This example differs from demo1:</p>
+
+
+	<ul>
+		<li> added a second and third viewlet</li>
+		<li>second viewlet
+			<ul>
+			<li> uses a template instead of a class (via ZCML)</li>
+			<li> added zcmlnamespacetest to viewlet directive, accessible via <pre>view/zcmlnamespacetest</pre></li>
+			</ul>
+		</li>
+		<li>third viewlet
+			<ul>
+			<li>uses both a class and a template (just like regular view)</li>
+			<li>added classnamespacetest to viewlet class, accessible via <pre>view/classnamespacetest</pre></li>
+			</ul>
+		</li>
+	</ul>
+
+
+    <p>The demo1vmprovider is still available:</p>
+    <pre>tal:content="structure provider:demo1vmprovider"</pre>
+
+<textarea name="code" class="xhtml">
+<p tal:content="structure provider:demo1vmprovider"></p>
+</textarea>
+
+    <p>Caveats: So far, these examples do not take advantage of the two phase update/render rendering process.</p>
+
+<hr />
+
+<!-- ignore: view source code -->
+	<div tal:define="sources string:page.pt viewlet2.pt viewlet3.pt viewletmanager.pt configure.zcml demo.py"
+		 tal:replace="structure provider:app.ViewSourceContentProvider" />

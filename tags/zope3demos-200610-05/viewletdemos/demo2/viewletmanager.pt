@@ -1,0 +1,5 @@
+
+ <ul class="z3d.demo2.viewlet1manager">
+    <li tal:repeat="viewlet options/viewlets"
+               tal:content="structure viewlet/render" />
+ </ul>

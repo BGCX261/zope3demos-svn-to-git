@@ -1,0 +1,16 @@
+<textarea name="code" class="html">
+<h2>page.pt</h2>
+
+Try accessing the testMessage attribute on .demo.PageView
+<blockquote>
+<h3 tal:content="view/testMessage" />
+</blockquote>
+
+</textarea>
+
+
+
+<!-- ignore: view source code -->
+<div tal:define="sources string:configure.zcml demo.py masterpage.pt page.pt"
+	 tal:replace="structure provider:app.ViewSourceContentProvider" />
+
